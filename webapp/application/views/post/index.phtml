@@ -1,0 +1,16 @@
+<a href="/post/add">添加</a>
+<hr>
+<?php if(empty($list)):?>
+	没有记录哦
+<?php else:?>
+	<?php foreach($list as $v):?>
+		<?php echo $v['id'];?>
+		---
+		<?php echo $v['title'];?>
+		---
+		<?php echo $v['content'];?>
+		<a href="/post/edit/id/<?php echo $v['id'];?>" >编辑</a>
+		<a href="/post/del/id/<?php echo $v['id'];?>">删除</a>
+		<br>
+	<?php endforeach;?>
+<?php endif;?>
